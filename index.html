@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app>
+<div class="column" ng-controller="ngAppExampleController">
+    <h1>TO DO LIST</h1>
+    <div id="ngAppExample">
+        <ul class="menu" ng-init="todo=data.todo">
+            <li class="list" ng-click="todo=data.todo">List
+            </li>
+            <li class="done" ng-click="todo=data.check">Done</li>
+            <li class="archive" ng-click="todo=data.archive">Archive</li>
+        </ul>
+        <form>
+            <input type="checkbox" id="search"/> <h8>Live Search</h8>
+            <input type="text" ng-model="data.newTodo" ng-model-instant id="Input"/><span
+                ng-click="addItem()" title="+"><button ng-show="data.newTodo.length">ADD</button></span>
+        </form>
+        <ul>
+            <li ng-repeat="todos in todo">
+                <input type="checkbox" ng-model="todos.done" ng-click="checkTodo()">{{todos.name}}
+                </input>
+                <button ng-click="removeItem(todos)">&times
+                </button>
+            </li>
+        </ul>
+        <!--<h2 ng-model="data.todo" ng-show="data.todo.length">Total:{{getCountOfCompleted()}}/{{data.todo.length}}</h2>-->
+       <!-- <button ng-click="removeCompletedItems()" ng-show="data.todo.length">Clear</button>-->
+        </ul>
+    </div>
+    <script src="js/angular.js"></script>
+</div>
+</body>
+</html>
