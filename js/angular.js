@@ -1,7 +1,7 @@
 "use strict";
 
 function ngAppExampleController($scope) {
-    $scope.button = '';
+    $scope.button = 'list';
     $scope.data = {
         done: false,
         newTodo: '',
