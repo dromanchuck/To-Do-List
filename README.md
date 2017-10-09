@@ -1,2 +1,2 @@
-# To-Do-List
-My To-Do List for TeachMeSkills
+
+My To Do List for TeachMeSkills.
