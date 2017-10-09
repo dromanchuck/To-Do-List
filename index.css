@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+div.column {
+    width: 30%;
+    margin: 0;
+    padding: .5em;
+    display: inline-block;
+}
+
+.done-true {
+    text-decoration: line-through;
+}
+
+.text {
+    border: 1px solid #c9302c;
+}
+ul {
+    -webkit-padding-start: 0;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
