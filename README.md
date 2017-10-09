@@ -1,2 +1,2 @@
-**<h1>TO DO LIST</h1>**
-<h3> My To Do List for TeachMeSkills.</h3>
+#                                                          TO DO LIST #
+## My To Do List for TeachMeSkills. ##
