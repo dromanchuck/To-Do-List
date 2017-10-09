@@ -26,32 +26,31 @@
 
         <div ng-show="button=='list'">
             <form>
-                <input type="checkbox" id="search"/>
-                <h8>Live Search</h8>
-                <input type="text" ng-model="data.newTodo" ng-model-instant id="Input"/><span
-                    ng-click="addItem()" title="+"><button ng-show="data.newTodo.length">ADD</button></span>
+                <input type="text" ng-model="data.newTodo" ng-model-instant id="Input"  placeholder="title..."/><span
+                    ng-click="addItem()" title="+"><button ng-show="data.newTodo.length" class="addBtn">ADD</button></span>
             </form>
             <ul>
                 <li ng-repeat="todos in data.todo">
-                    <button ng-click="checkTodo(todos)">Check</button>{{todos.name}}
+                    <button ng-click="checkItem(todos)">Check</button>
+                    {{todos.name}}
                     <button ng-click="removeItem(todos)">&times
                     </button>
                 </li>
             </ul>
         </div>
         <div ng-show="button=='done'">
+            <input type="text" ng-model="searchText" ng-model-instant id="Input"  placeholder="Search..."/>
             <ul>
-                <li ng-repeat="todos in data.check">
-                    <input type="checkbox" ng-click="checkTodo()">{{todos.name}}
-                    </input>
+                <li ng-repeat="todos in data.check|filter:searchText">
+                    <span>{{todos.name}}</span>
                 </li>
             </ul>
         </div>
         <div ng-show="button=='archive'">
+            <input type="text" ng-model="searchText" ng-model-instant id="Input"  placeholder="Search..."/>
             <ul>
-                <li ng-repeat="todos in data.archive">
-                    <input type="checkbox" ng-click="checkTodo()">{{todos.name}}
-                    </input>
+                <li ng-repeat="todos in data.archive|filter:searchText">
+                    <span>{{todos.name}}</span>
                 </li>
             </ul>
         </div>
