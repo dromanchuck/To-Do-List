@@ -31,7 +31,9 @@ body {
 
 /* Darker background-color on hover */
 .list li:hover {
-    background: #ddd;
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
 }
 
 /* When clicked on, add a background color and strike out text */
@@ -41,7 +43,6 @@ body {
     text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
 .list li.checked::before {
     content: '';
     position: absolute;
@@ -53,6 +54,60 @@ body {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
+}
+.done {
+    list-style-type: none;
+}
+.done li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #1215ee;
+    font-size: 18px;
+    transition: 0.2s;
+    color:white;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.done li:nth-child(odd) {
+    background: #09005c;
+}
+
+.done li:hover {
+    background: #f8ef31;
+    color: #fff;
+}
+.archive {
+    list-style-type: none;
+}
+.archive li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #de0004;
+    font-size: 18px;
+    transition: 0.2s;
+    color:white;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.archive li:nth-child(odd) {
+    background: #5c0713;
+}
+
+.archive li:hover {
+    background: #f813a0;
+    color: #fff;
 }
 div.column {
     width: 30%;
