@@ -34,14 +34,14 @@
             <ul class="list">
                 <li ng-repeat="todos in data.todo" ng-click="checkItem(todos);" ng-class="todos.className">
                     {{todos.name}}
-                    <span class="close" ng-click="removeItem(todos)">X
+                    <span class="close" ng-click="removeItem(todos)">&#215;
                     </span>
                 </li>
             </ul>
         </div>
         <div ng-show="button=='done'">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
-            <ul class="list">
+            <ul class="done">
                 <li ng-repeat="todos in data.check|filter:searchText">
                     <span>{{todos.name}}</span>
                 </li>
@@ -50,7 +50,7 @@
         </div>
         <div ng-show="button=='archive'">
             <input type="text" ng-model="searchText" ng-model-instant  placeholder="Search..."/>
-            <ul class="list">
+            <ul class="archive">
                 <li ng-repeat="todos in data.archive|filter:searchText">
                     <span ng-click="">{{todos.name}}</span>
                 </li>
