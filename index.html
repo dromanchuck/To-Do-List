@@ -13,13 +13,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/animate.css">
+    <script src="js/angular-animate.js"></script>
 </head>
 <body ng-app>
 <div class="column" ng-controller="ngAppExampleController">
     <h1>TO DO LIST</h1>
     <div id="ngAppExample">
         <ul class="menu">
-            <li class="list" ng-model="button" ng-click="button='list'">List
+            <li class="list" ng-model="button" ng-click="button='list';">List
             </li>
             <li class="done" ng-model="button" ng-click="button='done'">Done</li>
             <li class="archive" ng-model="button" ng-click="button='archive'">Archive</li>
@@ -28,10 +29,10 @@
         <div ng-show="button=='list'">
             <form>
                 <input type="text" ng-model="data.newTodo" ng-model-instant id="Input"  placeholder="title..."/><span
-                    ng-click="addItem()" title="+"><button ng-show="data.newTodo.length" class="addBtn">ADD</button></span>
+                    ng-click="addItem()" title="+"><button class="addBtn">ADD</button></span>
             </form>
-            <ul>
-                <li ng-click="temp='animated bounceOutDown checked';checkItem(todos)" ng-class="temp" ng-repeat="todos in data.todo"  >
+            <ul class="list">
+                <li ng-repeat="todos in data.todo" ng-click="checkItem(todos);" ng-class="todos.className">
                     {{todos.name}}
                     <span class="close" ng-click="removeItem(todos)">X
                     </span>
@@ -40,7 +41,7 @@
         </div>
         <div ng-show="button=='done'">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
-            <ul>
+            <ul class="list">
                 <li ng-repeat="todos in data.check|filter:searchText">
                     <span>{{todos.name}}</span>
                 </li>
@@ -49,7 +50,7 @@
         </div>
         <div ng-show="button=='archive'">
             <input type="text" ng-model="searchText" ng-model-instant  placeholder="Search..."/>
-            <ul>
+            <ul class="list">
                 <li ng-repeat="todos in data.archive|filter:searchText">
                     <span ng-click="">{{todos.name}}</span>
                 </li>
