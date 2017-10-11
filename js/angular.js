@@ -15,8 +15,10 @@ function ngAppExampleController($scope) {
     $scope.addItem = function () {
         $scope.data.todo.push({
             name: $scope.data.newTodo,
-            done: $scope.data.done
+            done: $scope.data.done,
+            className: ''
         });
+        $scope.data.newTodo = '';
         localStorage.setItem('list', JSON.stringify($scope.data.todo));
     };
     $scope.removeCompletedItems = function () {
@@ -39,16 +41,18 @@ function ngAppExampleController($scope) {
     $scope.removeItem = function (todo) {
         var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
         $scope.data.archive = $scope.data.archive.concat(arr);
-        console.log($scope.button);
         localStorage.setItem('list', JSON.stringify($scope.data.todo));
         localStorage.setItem('archive', JSON.stringify($scope.data.archive));
     };
     $scope.checkItem = function (todo) {
-        var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
-        $scope.data.check = $scope.data.check.concat(arr);
-        console.log($scope.button);
-        localStorage.setItem('list', JSON.stringify($scope.data.todo));
-        localStorage.setItem('check', JSON.stringify($scope.data.check));
+        todo.className = 'checked animated bounceOut';
+        setTimeout(function () {
+            var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
+            $scope.data.check = $scope.data.check.concat(arr);
+            localStorage.setItem('list', JSON.stringify($scope.data.todo));
+            localStorage.setItem('check', JSON.stringify($scope.data.check));
+        }, 600);
+
     };
     $scope.removeAll = function (todo) {
         if (todo === $scope.data.archive) {
