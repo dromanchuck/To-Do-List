@@ -13,9 +13,9 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eee;
+    background: #eaddee;
     font-size: 18px;
-    transition: 0.2s;
+    transition: 1s;
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -62,9 +62,9 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #1215ee;
+    background: #e4eee5;
     font-size: 18px;
-    transition: 0.2s;
+    transition: 1s;
     color:white;
 
     /* make the list items unselectable */
@@ -75,11 +75,11 @@ body {
 }
 
 .done li:nth-child(odd) {
-    background: #09005c;
+    background: #5a595c;
 }
 
 .done li:hover {
-    background: #f8ef31;
+    background: #f8efee;
     color: #fff;
 }
 .archive {
@@ -89,9 +89,9 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #de0004;
+    background: #d8decb;
     font-size: 18px;
-    transition: 0.2s;
+    transition: 1s;
     color:white;
 
     /* make the list items unselectable */
@@ -102,11 +102,11 @@ body {
 }
 
 .archive li:nth-child(odd) {
-    background: #5c0713;
+    background: #5a595c;
 }
 
 .archive li:hover {
-    background: #f813a0;
+    background: #f3e1f8;
     color: #fff;
 }
 div.column {
@@ -114,6 +114,8 @@ div.column {
     margin: 0;
     padding: .5em;
     display: inline-block;
+    border:solid #fff7f4 30px;
+    border-redius:5%;
 }
 
 ul {
@@ -138,6 +140,9 @@ ul {
     background-color: #ccc;
     color: #fff;
 }
+.menu li:active {
+    background-color: #cccac7;
+}
 .close {
     position: absolute;
     right: 0;
@@ -146,6 +151,16 @@ ul {
 }
 
 .close:hover {
-    background-color: #f44336;
+    background-color: #f4ecf0;
     color: white;
+}
+.main {
+    border: #fffaf3 solid 20px;
+    border-radius:15%;
+    background: #b0a9a4;
+    transition:2s;
+    box-shadow: 0 0 10px;
+}
+input {
+    width:50%;
 }

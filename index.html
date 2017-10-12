@@ -5,9 +5,6 @@
     <title>ToDo List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -26,12 +23,13 @@
             <li class="archive" ng-model="button" ng-click="button='archive'">Archive</li>
         </ul>
 
-        <div ng-show="button=='list'">
+        <div ng-show="button=='list'"class="main">
             <form>
-                <input type="text" ng-model="data.newTodo" ng-model-instant id="Input"  placeholder="title..."/><span
+                <input type="text" ng-model="data.newTodo" ng-model-instant id="Input" placeholder="title..."/><span
                     ng-click="addItem()" title="+"><button class="addBtn">ADD</button></span>
             </form>
-            <ul class="list">
+            <ul class="list" ng-model="data.todo">
+                <h4 ng-show="!data.todo.length">TO DO LIST! Special for TeachMeSkills</h4>
                 <li ng-repeat="todos in data.todo" ng-click="checkItem(todos);" ng-class="todos.className">
                     {{todos.name}}
                     <span class="close" ng-click="removeItem(todos)">&#215;
@@ -39,23 +37,26 @@
                 </li>
             </ul>
         </div>
-        <div ng-show="button=='done'">
+        <div ng-show="button=='done'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="done">
+                <h4 ng-show="!data.check.length">Здесь хранятся выполненные элементы списка</h4>
                 <li ng-repeat="todos in data.check|filter:searchText">
-                    <span>{{todos.name}}</span>
+                    {{todos.name}}
                 </li>
             </ul>
-            <button ng-model="data.check" ng-click="removeAll(data.check)" ng-show="data.check.length">Delete ALL items</button>
+            <button ng-model="data.check" ng-click="removeAll(data.check)" ng-show="data.check.length">Delete ALL
+                items
+            </button>
         </div>
-        <div ng-show="button=='archive'">
-            <input type="text" ng-model="searchText" ng-model-instant  placeholder="Search..."/>
+        <div ng-show="button=='archive'" class="main">
+            <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="archive">
-                <li ng-repeat="todos in data.archive|filter:searchText">
-                    <span ng-click="">{{todos.name}}</span>
+                <h4 ng-show="!data.archive.length">Здесь хранятся удаленные элементы списка</h4>
+                <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className">
+                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos)">&#215;</span>
                 </li>
             </ul>
-            <button ng-model="data.archive" ng-click="removeAll(data.archive)" ng-show="data.archive.length">Delete ALL items</button>
         </div>
         <!--<h2 ng-model="data.todo" ng-show="data.todo.length">Total:{{getCountOfCompleted()}}/{{data.todo.length}}</h2>-->
         <!-- <button ng-click="removeCompletedItems()" ng-show="data.todo.length">Clear</button>-->
