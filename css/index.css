@@ -75,7 +75,7 @@ body {
 }
 
 .done li:nth-child(odd) {
-    background: #5a595c;
+    background: #8a8687;
 }
 
 .done li:hover {
@@ -116,6 +116,7 @@ div.column {
     display: inline-block;
     border:solid #fff7f4 30px;
     border-redius:5%;
+    box-shadow: 0 0 10px;
 }
 
 ul {
