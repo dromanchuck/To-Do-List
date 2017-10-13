@@ -13,18 +13,17 @@ function ngAppExampleController($scope, $timeout) {
         check: JSON.parse(localStorage.getItem('check')) || []
     };
     $scope.addItem = function () {
-        console.log($scope.data.newTodo);
         if ($scope.data.newTodo.length === 0) {
             alert('You must be doing something wrong');
         } else {
-                $scope.data.todo.push({
-                    name: $scope.data.newTodo,
-                    done: $scope.data.done,
-                    className: 'animated bounceIn'
-                });
-                $scope.data.newTodo = '';
-                localStorage.setItem('list', JSON.stringify($scope.data.todo));
-            }
+            $scope.data.todo.push({
+                name: $scope.data.newTodo,
+                done: $scope.data.done,
+                className: 'animated bounceIn'
+            });
+            $scope.data.newTodo = '';
+            localStorage.setItem('list', JSON.stringify($scope.data.todo));
+        }
 
     };
     $scope.removeCompletedItems = function () {
@@ -45,6 +44,7 @@ function ngAppExampleController($scope, $timeout) {
     };
 
     $scope.removeItem = function (todo) {
+        console.log(todo);
         var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
         $scope.data.archive = $scope.data.archive.concat(arr);
         localStorage.setItem('list', JSON.stringify($scope.data.todo));
@@ -62,7 +62,7 @@ function ngAppExampleController($scope, $timeout) {
     $scope.removeItemForever = function (todo) {
         todo.className = 'animated bounceOut';
         $timeout(function () {
-            $scope.data.archive.splice($scope.data.todo.indexOf(todo), 1);
+            $scope.data.archive.splice($scope.data.archive.indexOf(todo), 1);
             localStorage.setItem('archive', JSON.stringify($scope.data.archive));
         }, 600);
     };
@@ -75,4 +75,4 @@ function ngAppExampleController($scope, $timeout) {
             localStorage.removeItem('check');
         }
     };
- }
+}

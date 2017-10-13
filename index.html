@@ -51,10 +51,11 @@
         </div>
         <div ng-show="button=='archive'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
-            <ul class="archive">
+            <ul class="archive" ng-model="data.archive">
                 <h4 ng-show="!data.archive.length">Здесь хранятся удаленные элементы списка</h4>
                 <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className">
-                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos)">&#215;</span>
+                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos)">&#215;
+                    </span>
                 </li>
             </ul>
         </div>
