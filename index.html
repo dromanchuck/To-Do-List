@@ -42,25 +42,24 @@
             <ul class="done">
                 <h4 ng-show="!data.check.length">Здесь хранятся выполненные элементы списка</h4>
                 <li ng-repeat="todos in data.check|filter:searchText">
-                    {{todos.name}}
+                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.check)">&#215;
+                    </span>
                 </li>
             </ul>
-            <button ng-model="data.check" ng-click="removeAll(data.check)" ng-show="data.check.length">Delete ALL
-                items
-            </button>
+        
         </div>
         <div ng-show="button=='archive'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="archive" ng-model="data.archive">
                 <h4 ng-show="!data.archive.length">Здесь хранятся удаленные элементы списка</h4>
                 <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className">
-                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos)">&#215;
+                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.archive)">&#215;
                     </span>
                 </li>
             </ul>
         </div>
-        <!--<h2 ng-model="data.todo" ng-show="data.todo.length">Total:{{getCountOfCompleted()}}/{{data.todo.length}}</h2>-->
-        <!-- <button ng-click="removeCompletedItems()" ng-show="data.todo.length">Clear</button>-->
+       <h2 ng-model="data.todo" ng-show="data.todo.length">Total:{{data.todo.length}}</h2>
+      
         </ul>
     </div>
     <script src="js/angular.js"></script>
