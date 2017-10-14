@@ -16,6 +16,8 @@ body {
     background: #eaddee;
     font-size: 18px;
     transition: 1s;
+    border-redius:5%;
+    box-shadow: 0 0 10px;
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -153,7 +155,7 @@ ul {
 
 .close:hover {
     background-color: #f4ecf0;
-    color: white;
+    color: red;
 }
 .main {
     border: #fffaf3 solid 20px;
