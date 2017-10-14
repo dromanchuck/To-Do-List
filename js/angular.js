@@ -67,7 +67,11 @@ function ngAppExampleController($scope, $timeout) {
                 localStorage.setItem('archive', JSON.stringify($scope.data.archive));
             }, 900);
         } else {
-            console.log('See your progress, don\'t delete)');
+            todo.className = 'animated bounceOut';
+            $timeout(function () {
+                $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
+                localStorage.setItem('check', JSON.stringify($scope.data.check));
+            }, 900);
         }
     };
     
