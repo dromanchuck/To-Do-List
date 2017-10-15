@@ -33,14 +33,14 @@ function ngAppExampleController($scope, $timeout) {
     };
 
     $scope.removeItem = function (todo) {
-            todo.details = false;
-            todo.className = 'animated bounceIn';
-            todo.archived = $scope.getDate();
-            var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
-            $scope.data.archive = $scope.data.archive.concat(arr);
-            localStorage.setItem('list', JSON.stringify($scope.data.todo));
-            localStorage.setItem('archive', JSON.stringify($scope.data.archive));
-        };
+        todo.details = false;
+        todo.className = 'animated bounceIn';
+        todo.archived = $scope.getDate();
+        var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
+        $scope.data.archive = $scope.data.archive.concat(arr);
+        localStorage.setItem('list', JSON.stringify($scope.data.todo));
+        localStorage.setItem('archive', JSON.stringify($scope.data.archive));
+    };
     $scope.checkItem = function (todo) {
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
@@ -57,6 +57,7 @@ function ngAppExampleController($scope, $timeout) {
             todo.details = false;
             todo.className = 'animated bounceOut';
             $timeout(function () {
+                todo.details = false;
                 $scope.data.archive.splice($scope.data.archive.indexOf(todo), 1);
                 localStorage.setItem('archive', JSON.stringify($scope.data.archive));
             }, 900);
@@ -64,6 +65,7 @@ function ngAppExampleController($scope, $timeout) {
             todo.details = false;
             todo.className = 'animated bounceOut';
             $timeout(function () {
+                todo.details = false;
                 $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
                 localStorage.setItem('check', JSON.stringify($scope.data.check));
             }, 900);
@@ -78,6 +80,7 @@ function ngAppExampleController($scope, $timeout) {
         todo.details = false;
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
+            todo.details = false;
             todo.className = 'animated bounceIn';
             todo.archived = $scope.getDate();
             var arr = $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
@@ -87,7 +90,6 @@ function ngAppExampleController($scope, $timeout) {
         }, 900);
     };
     $scope.getDetails = function (todo) {
-        console.log(todo);
         return todo.details?todo.details=false:todo.details=true;
     };
 
