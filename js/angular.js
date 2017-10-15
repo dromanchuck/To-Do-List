@@ -32,12 +32,15 @@ function ngAppExampleController($scope, $timeout) {
     };
 
     $scope.removeItem = function (todo) {
-        console.log(todo);
-        var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
-        $scope.data.archive = $scope.data.archive.concat(arr);
-        localStorage.setItem('list', JSON.stringify($scope.data.todo));
-        localStorage.setItem('archive', JSON.stringify($scope.data.archive));
-    };
+        todo.className = 'animated fadeOut';
+        $timeout(function(){
+            var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
+            $scope.data.archive = $scope.data.archive.concat(arr);
+            localStorage.setItem('list', JSON.stringify($scope.data.todo));
+            localStorage.setItem('archive', JSON.stringify($scope.data.archive));
+            todo.className = 'animated bounceIn';
+         }, 900);
+        };
     $scope.checkItem = function (todo) {
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
