@@ -5,11 +5,16 @@
 body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    background: -webkit-linear-gradient(to top right, #d1d2d3 10%, rgba(70,121,167,1) 100%);
-    background: -moz-linear-gradient(to top right, #d1d2d3 10%, rgba(70,121,167,1) 100%);
-    background: -o-linear-gradient(to top right, #d1d2d3 10%, rgba(70,121,167,1) 100%);
-    background: linear-gradient(to top right, #d1d2d3 10%, rgba(70,121,167,1) 100%);
+    background: -webkit-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: -moz-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: -o-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
 }
+.wrapper {
+  max-width: 400px;
+  height: 890px;
+  margin: 100px auto;
+} 
 .list {
     list-style-type: none;
 }
@@ -17,11 +22,12 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eaddee;
+    background-color:white;
     font-size: 18px;
+    font-family: Gloria Hallelujah;
     transition: 1s;
     border-radius:2%;
-    box-shadow: 0 0 10px;
+    text-shadow : .5px .5px black;
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -31,7 +37,8 @@ body {
 }
 
 .list li:nth-child(odd) {
-    background: #f9f9f9;
+    background:  rgba(80,131,183,1);
+    color:white;
 }
 
 
@@ -69,6 +76,7 @@ body {
     padding: 12px 8px 12px 40px;
     background: #eaddee;
     font-size: 18px;
+    font-family: Gloria Hallelujah;
     transition: 1s;
     border-radius:2%;
     box-shadow: 0 0 10px;
@@ -90,13 +98,10 @@ body {
 }
 
 div.column {
-    width: 30%;
+    width: 100%;
     margin: 0;
     padding: .5em;
     display: inline-block;
-    border:solid #fff7f4 30px;
-    border-redius:5%;
-    box-shadow: 0 0 10px;
 }
 
 ul {
@@ -138,17 +143,18 @@ ul {
 .main {
     border: #fffaf3 solid 20px;
     border-radius:15%;
-    background: #b0a9a4;
     transition:2s;
     box-shadow: 0 0 10px;
 }
 input {
-    width:50%;
+    width:60%;
+    border:none;
+
 }
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: rgba(80,131,183,1);
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -182,4 +188,15 @@ input {
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+footer{
+  text-align: center;
+  color: #fff;
+  text-shadow : .3px .3px black;
+  margin-bottom: 80px;
+}
+h1 {
+  font-family:Syncopate;
+  color:white;
+  text-shadow : .5px .5px white;
 }
