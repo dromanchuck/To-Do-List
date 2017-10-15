@@ -26,7 +26,7 @@
         <div ng-show="button=='list'"class="main">
             <form>
                 <input type="text" ng-model="data.newTodo" ng-model-instant id="Input" placeholder="title..."/><span
-                    ng-click="addItem()" title="+"><button class="addBtn">ADD</button></span>
+                    ng-click="addItem()" title="+"><button class="button"><span>ADD</span></button></span>
             </form>
             <ul class="list" ng-model="data.todo">
                 <h4 ng-show="!data.todo.length">TO DO LIST! Special for TeachMeSkills</h4>
@@ -41,7 +41,7 @@
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="done">
                 <h4 ng-show="!data.check.length">Здесь хранятся выполненные элементы списка</h4>
-                <li ng-repeat="todos in data.check|filter:searchText">
+                <li ng-repeat="todos in data.check|filter:searchText" ng-class="todos.className">
                     {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.check)">&#215;
                     </span>
                 </li>
@@ -50,7 +50,7 @@
         </div>
         <div ng-show="button=='archive'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
-            <ul class="archive" ng-model="data.archive">
+            <ul class="done" ng-model="data.archive">
                 <h4 ng-show="!data.archive.length">Здесь хранятся удаленные элементы списка</h4>
                 <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className">
                     {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.archive)">&#215;
