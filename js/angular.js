@@ -5,9 +5,6 @@ function ngAppExampleController($scope, $timeout) {
     $scope.data = {
         done: false,
         newTodo: '',
-        created: new Date(),
-        updated:'',
-        deleted: '',
         todo: JSON.parse(localStorage.getItem('list')) || [],
         archive: JSON.parse(localStorage.getItem('archive')) || [],
         check: JSON.parse(localStorage.getItem('check')) || []
@@ -19,7 +16,8 @@ function ngAppExampleController($scope, $timeout) {
             $scope.data.todo.push({
                 name: $scope.data.newTodo,
                 done: $scope.data.done,
-                className: 'animated bounceIn'
+                className: 'animated bounceIn',
+                created:$scope.getDate()
             });
             $scope.data.newTodo = '';
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
@@ -32,14 +30,11 @@ function ngAppExampleController($scope, $timeout) {
     };
 
     $scope.removeItem = function (todo) {
-        todo.className = 'animated fadeOut';
-        $timeout(function(){
+            todo.className = 'animated bounceIn';
             var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
             $scope.data.archive = $scope.data.archive.concat(arr);
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
             localStorage.setItem('archive', JSON.stringify($scope.data.archive));
-            todo.className = 'animated bounceIn';
-         }, 900);
         };
     $scope.checkItem = function (todo) {
         todo.className = 'checked animated bounceOut';
@@ -66,6 +61,11 @@ function ngAppExampleController($scope, $timeout) {
             }, 900);
         }
     };
+    $scope.getDate = function(){
+        var date = new Date();
+        return date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ':' + date.getHours() + '.' + date.getMinutes();
+    }
     
   
 }
+//https://codepen.io/OtariKobiashvili/pen/BREeqy?page=7
