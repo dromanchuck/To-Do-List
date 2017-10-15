@@ -4,18 +4,33 @@
 
 body {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    background: -webkit-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
+    background: -moz-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
+    background: -o-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
+    background: linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
 }
+
+.wrapper {
+    max-width: 400px;
+    height: 890px;
+    margin: 100px auto;
+}
+
 .list {
     list-style-type: none;
 }
-/* Style the list items */
+
 .list li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eaddee;
+    background-color: white;
     font-size: 18px;
+    font-family: Gloria Hallelujah;
     transition: 1s;
+    border-radius: 15px;
+    text-shadow: .5px .5px black;
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -24,19 +39,17 @@ body {
     user-select: none;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
 .list li:nth-child(odd) {
-    background: #f9f9f9;
+    background: rgba(80, 131, 183, 1);
+    color: white;
 }
 
-/* Darker background-color on hover */
 .list li:hover {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
 
-/* When clicked on, add a background color and strike out text */
 .list li.checked {
     background: #888;
     color: #fff;
@@ -55,17 +68,20 @@ body {
     height: 15px;
     width: 7px;
 }
+
 .done {
     list-style-type: none;
 }
+
 .done li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #e4eee5;
+    background-color: white;
     font-size: 18px;
+    font-family: Gloria Hallelujah;
     transition: 1s;
-    color:white;
+    border-radius: 15px;
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -75,48 +91,20 @@ body {
 }
 
 .done li:nth-child(odd) {
-    background: #8a8687;
+    background: rgba(80, 131, 183, 1);
+    color: white;
 }
 
 .done li:hover {
-    background: #f8efee;
+    background: #888;
     color: #fff;
 }
-.archive {
-    list-style-type: none;
-}
-.archive li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #d8decb;
-    font-size: 18px;
-    transition: 1s;
-    color:white;
 
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.archive li:nth-child(odd) {
-    background: #5a595c;
-}
-
-.archive li:hover {
-    background: #f3e1f8;
-    color: #fff;
-}
 div.column {
-    width: 30%;
+    width: 100%;
     margin: 0;
-    padding: .5em;
+    padding: .10em;
     display: inline-block;
-    border:solid #fff7f4 30px;
-    border-redius:5%;
-    box-shadow: 0 0 10px;
 }
 
 ul {
@@ -131,37 +119,124 @@ ul {
 
 .menu li {
     margin: 0 10px;
-    border: 1px solid #ccc;
+    border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    color: rgba(80, 131, 183, 1);
+    font-family: lobster two;
+    font-size: 30px;
 }
 
 .menu li:hover {
-    background-color: #ccc;
-    color: #fff;
+    background-color: rgba(80, 131, 183, 1);
+    color: white;
 }
+
 .menu li:active {
     background-color: #cccac7;
 }
+
 .close {
     position: absolute;
     right: 0;
     top: 0;
     padding: 12px 16px 12px 16px;
+    border-radius: 15px;
 }
 
 .close:hover {
     background-color: #f4ecf0;
-    color: white;
+    color: red;
 }
+
+.archiveButton {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 14px 10px 14px;
+    border-radius: 15px;
+}
+
+.archiveButton:hover {
+    background-color: #f4ecf0;
+    color: red;
+}
+
 .main {
-    border: #fffaf3 solid 20px;
-    border-radius:15%;
-    background: #b0a9a4;
-    transition:2s;
+    border: #fffaf3 solid 10px;
+    border-radius: 15%;
+    transition: 2s;
     box-shadow: 0 0 10px;
 }
+
 input {
-    width:50%;
+    width: 60%;
+    border: solid rgba(80, 131, 183, 1);
+    border-radius: 5px;
+    font-family: Gloria Hallelujah;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgba(80, 131, 183, 1);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    font-family: Righteous;
+    height: 28px;
+    width: 70px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+footer {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px rgba(80, 131, 183, 1);
+    margin-bottom: 80px;
+    font-family: lobster two;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: Syncopate;
+    color: white;
+    text-shadow: 2px 2px white;
+}
+
+h4 {
+    font-family: Sedgwick Ave;
+    color: white;
+}
+
+.details {
+    font-size: 15px;
 }
