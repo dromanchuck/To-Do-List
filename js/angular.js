@@ -41,6 +41,7 @@ function ngAppExampleController($scope, $timeout) {
     $scope.checkItem = function (todo) {
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
+            todo.className = 'animated bounceIn';
             var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
             $scope.data.check = $scope.data.check.concat(arr);
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
