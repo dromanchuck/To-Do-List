@@ -26,19 +26,7 @@ function ngAppExampleController($scope, $timeout) {
         }
 
     };
-    $scope.removeCompletedItems = function () {
-        $scope.data.todo = $scope.data.todo.filter(function (todos) {
-            if (todos.done) {
-                $scope.data.archive.push(todos);
-                todos.done = false;
-                return false;
-            } else {
-                return true;
-            }
-        });
-        localStorage.setItem('list', JSON.stringify($scope.data.todo));
-        localStorage.setItem('archive', JSON.stringify($scope.data.archive));
-    };
+
     $scope.getCountOfCompleted = function () {
         return $scope.data.todo.reduce((p, c) => c.done ? ++p : p, 0);
     };
@@ -66,7 +54,7 @@ function ngAppExampleController($scope, $timeout) {
                 $scope.data.archive.splice($scope.data.archive.indexOf(todo), 1);
                 localStorage.setItem('archive', JSON.stringify($scope.data.archive));
             }, 900);
-        } else {
+        } else if(arr === $scope.data.check) {
             todo.className = 'animated bounceOut';
             $timeout(function () {
                 $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
