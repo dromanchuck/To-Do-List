@@ -16,16 +16,11 @@ function ngAppExampleController($scope, $timeout) {
             $scope.data.todo.push({
                 name: $scope.data.newTodo,
                 done: $scope.data.done,
-<<<<<<< HEAD
                 details:false,
                 className: 'animated bounceIn',
                 created:$scope.getDate(),
                 completed:'not completed',
                 archived:''
-=======
-                className: 'animated bounceIn',
-                created:$scope.getDate()
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
             });
             $scope.data.newTodo = '';
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
@@ -39,10 +34,7 @@ function ngAppExampleController($scope, $timeout) {
 
     $scope.removeItem = function (todo) {
             todo.className = 'animated bounceIn';
-<<<<<<< HEAD
             todo.archived = $scope.getDate();
-=======
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
             var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
             $scope.data.archive = $scope.data.archive.concat(arr);
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
@@ -52,16 +44,12 @@ function ngAppExampleController($scope, $timeout) {
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
             todo.className = 'animated bounceIn';
-<<<<<<< HEAD
             todo.completed = $scope.getDate();
-=======
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
             var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
             $scope.data.check = $scope.data.check.concat(arr);
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
             localStorage.setItem('check', JSON.stringify($scope.data.check));
         }, 900);
-<<<<<<< HEAD
     };
     $scope.removeItemForever = function (todo,arr) {
         if (arr === $scope.data.archive) {
@@ -98,31 +86,5 @@ function ngAppExampleController($scope, $timeout) {
         console.log(todo);
         return todo.details?todo.details=false:todo.details=true;
     };
-  
+
 }
-=======
-    };
-    $scope.removeItemForever = function (todo,arr) {
-        if (arr === $scope.data.archive) {
-            todo.className = 'animated bounceOut';
-            $timeout(function () {
-                $scope.data.archive.splice($scope.data.archive.indexOf(todo), 1);
-                localStorage.setItem('archive', JSON.stringify($scope.data.archive));
-            }, 900);
-        } else if(arr === $scope.data.check) {
-            todo.className = 'animated bounceOut';
-            $timeout(function () {
-                $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
-                localStorage.setItem('check', JSON.stringify($scope.data.check));
-            }, 900);
-        }
-    };
-    $scope.getDate = function(){
-        var date = new Date();
-        return date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ':' + date.getHours() + '.' + date.getMinutes();
-    }
-    
-  
-}
-//https://codepen.io/OtariKobiashvili/pen/BREeqy?page=7
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
