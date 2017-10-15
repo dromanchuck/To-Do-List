@@ -5,6 +5,7 @@
 body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+<<<<<<< HEAD
     background: -webkit-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
     background: -moz-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
     background: -o-linear-gradient(to top right, #d1d2d3 50%, rgba(70, 121, 167, 1) 100%);
@@ -21,16 +22,40 @@ body {
     list-style-type: none;
 }
 
+=======
+    background: -webkit-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: -moz-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: -o-linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+    background: linear-gradient(to top right, #d1d2d3 50%, rgba(70,121,167,1) 100%);
+}
+.wrapper {
+  max-width: 400px;
+  height: 890px;
+  margin: 100px auto;
+} 
+.list {
+    list-style-type: none;
+}
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 .list li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
+<<<<<<< HEAD
     background-color: white;
     font-size: 18px;
     font-family: Gloria Hallelujah;
     transition: 1s;
     border-radius: 15px;
     text-shadow: .5px .5px black;
+=======
+    background-color:white;
+    font-size: 18px;
+    font-family: Gloria Hallelujah;
+    transition: 1s;
+    border-radius:2%;
+    text-shadow : .5px .5px black;
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -40,16 +65,28 @@ body {
 }
 
 .list li:nth-child(odd) {
+<<<<<<< HEAD
     background: rgba(80, 131, 183, 1);
     color: white;
 }
 
+=======
+    background:  rgba(80,131,183,1);
+    color:white;
+}
+
+
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 .list li:hover {
     background: #888;
     color: #fff;
     text-decoration: line-through;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 .list li.checked {
     background: #888;
     color: #fff;
@@ -77,11 +114,20 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
+<<<<<<< HEAD
     background-color: white;
     font-size: 18px;
     font-family: Gloria Hallelujah;
     transition: 1s;
     border-radius: 15px;
+=======
+    background: #eaddee;
+    font-size: 18px;
+    font-family: Gloria Hallelujah;
+    transition: 1s;
+    border-radius:2%;
+    box-shadow: 0 0 10px;
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -91,12 +137,20 @@ body {
 }
 
 .done li:nth-child(odd) {
+<<<<<<< HEAD
     background: rgba(80, 131, 183, 1);
     color: white;
 }
 
 .done li:hover {
     background: #888;
+=======
+     background: #f9f9f9;
+}
+
+.done li:hover {
+     background: #888;
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
     color: #fff;
 }
 
@@ -148,6 +202,7 @@ ul {
 .close:hover {
     background-color: #f4ecf0;
     color: red;
+<<<<<<< HEAD
 }
 
 .archiveButton {
@@ -156,6 +211,8 @@ ul {
     top: 0;
     padding: 10px 14px 10px 14px;
     border-radius: 15px;
+=======
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 }
 
 .archiveButton:hover {
@@ -164,13 +221,20 @@ ul {
 }
 
 .main {
+<<<<<<< HEAD
     border: #fffaf3 solid 10px;
     border-radius: 15%;
     transition: 2s;
+=======
+    border: #fffaf3 solid 20px;
+    border-radius:15%;
+    transition:2s;
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
     box-shadow: 0 0 10px;
 }
 
 input {
+<<<<<<< HEAD
     width: 60%;
     border: solid rgba(80, 131, 183, 1);
     border-radius: 5px;
@@ -239,4 +303,58 @@ h4 {
 
 .details {
     font-size: 15px;
+=======
+    width:60%;
+    border:none;
+
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgba(80,131,183,1);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+footer{
+  text-align: center;
+  color: #fff;
+  text-shadow : .3px .3px black;
+  margin-bottom: 80px;
+}
+h1 {
+  font-family:Syncopate;
+  color:white;
+  text-shadow : .5px .5px white;
+>>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
 }
