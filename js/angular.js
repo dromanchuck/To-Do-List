@@ -33,6 +33,7 @@ function ngAppExampleController($scope, $timeout) {
     };
 
     $scope.removeItem = function (todo) {
+            todo.details = false;
             todo.className = 'animated bounceIn';
             todo.archived = $scope.getDate();
             var arr = $scope.data.todo.splice($scope.data.todo.indexOf(todo), 1);
