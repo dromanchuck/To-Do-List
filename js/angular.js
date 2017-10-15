@@ -53,12 +53,14 @@ function ngAppExampleController($scope, $timeout) {
     };
     $scope.removeItemForever = function (todo,arr) {
         if (arr === $scope.data.archive) {
+            todo.details = false;
             todo.className = 'animated bounceOut';
             $timeout(function () {
                 $scope.data.archive.splice($scope.data.archive.indexOf(todo), 1);
                 localStorage.setItem('archive', JSON.stringify($scope.data.archive));
             }, 900);
         } else if(arr === $scope.data.check) {
+            todo.details = false;
             todo.className = 'animated bounceOut';
             $timeout(function () {
                 $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
@@ -72,11 +74,11 @@ function ngAppExampleController($scope, $timeout) {
         return date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ':' + date.getHours() + '.' + date.getMinutes();
     };
     $scope.archiveItem = function (todo) {
+        todo.details = false;
         todo.className = 'checked animated bounceOut';
         $timeout(function () {
             todo.className = 'animated bounceIn';
             todo.archived = $scope.getDate();
-            todo.details = false;
             var arr = $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
             $scope.data.archive = $scope.data.archive.concat(arr);
             localStorage.setItem('archive', JSON.stringify($scope.data.archive));
