@@ -9,14 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-=======
-    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/animate.css">
     <script src="js/angular-animate.js"></script>
@@ -48,27 +44,19 @@
         <div ng-show="button=='done'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="done">
-<<<<<<< HEAD
                 <h4 ng-show="!data.check.length">Here is completed todos</h4>
                 <li ng-repeat="todos in data.check|filter:searchText" ng-class="todos.className" ng-click="getDetails(todos)">
                     <span class="archiveButton" ng-click="archiveItem(todos)">&#x2764;</span>
                     {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.check)">&#215;
                     </span>
                     <div  ng-show="todos.details" class="details">Created: {{todos.created}}, completed: {{todos.completed}}</div>
-=======
-                <h4 ng-show="!data.check.length">Здесь хранятся выполненные элементы списка</h4>
-                <li ng-repeat="todos in data.check|filter:searchText" ng-class="todos.className">
-                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.check)">&#215;
-                    </span>
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
                 </li>
             </ul>
-        
+
         </div>
         <div ng-show="button=='archive'" class="main">
             <input type="text" ng-model="searchText" ng-model-instant placeholder="Search..."/>
             <ul class="done" ng-model="data.archive">
-<<<<<<< HEAD
                 <h4 ng-show="!data.archive.length">Here is archived todos</h4>
                 <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className" ng-click="getDetails(todos)">
                     {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.archive)">&#215;
@@ -77,17 +65,6 @@
                 </li>
             </ul>
         </div>
-=======
-                <h4 ng-show="!data.archive.length">Здесь хранятся удаленные элементы списка</h4>
-                <li ng-repeat="todos in data.archive|filter:searchText" ng-class="todos.className" ng-init="temp=false" ng-mouseover="temp=true">
-                    {{todos.name}}<span class="close" ng-click="removeItemForever(todos,data.archive)">&#215;
-                    </span>
-                    <div ng-show="temp==true">Created: {{todos.created}}</div>
-                </li>
-            </ul>
-        </div>
-       <h2 ng-model="data.todo" ng-show="data.todo.length">Total:{{data.todo.length}}</h2>
->>>>>>> af3afeea89f58e6a827754153fa6a24b0827afc7
         </ul>
         <footer>Coded by DR</footer>
     </div>
