@@ -76,6 +76,7 @@ function ngAppExampleController($scope, $timeout) {
         $timeout(function () {
             todo.className = 'animated bounceIn';
             todo.archived = $scope.getDate();
+            todo.details = false;
             var arr = $scope.data.check.splice($scope.data.check.indexOf(todo), 1);
             $scope.data.archive = $scope.data.archive.concat(arr);
             localStorage.setItem('archive', JSON.stringify($scope.data.archive));
