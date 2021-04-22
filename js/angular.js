@@ -2,6 +2,7 @@
 
 function ngAppExampleController($scope, $timeout) {
     $scope.button = 'list';
+    
     $scope.data = {
         done: false,
         newTodo: '',
@@ -43,6 +44,7 @@ function ngAppExampleController($scope, $timeout) {
     };
     $scope.checkItem = function (todo) {
         todo.className = 'checked animated bounceOut';
+        
         $timeout(function () {
             todo.className = 'animated bounceIn';
             todo.completed = $scope.getDate();
@@ -52,6 +54,7 @@ function ngAppExampleController($scope, $timeout) {
             localStorage.setItem('check', JSON.stringify($scope.data.check));
         }, 900);
     };
+    
     $scope.removeItemForever = function (todo,arr) {
         if (arr === $scope.data.archive) {
             todo.details = false;
