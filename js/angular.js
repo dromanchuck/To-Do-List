@@ -23,7 +23,9 @@ function ngAppExampleController($scope, $timeout) {
                 completed:'not completed',
                 archived:''
             });
+            
             $scope.data.newTodo = '';
+            
             localStorage.setItem('list', JSON.stringify($scope.data.todo));
         }
 
